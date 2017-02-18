@@ -1,19 +1,9 @@
-<section class="main-header">
-  <p class="flash"><%= notice %><%= alert %></p>
-  <img src="<%= asset_path "achieve.png" %>">
-</section>
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
-<p><%= notice %></p>
 
-<!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>Achieve</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+ 
+<% if notice %>
+  <p class="flash"><%= notice %><%= alert %></p>
+<% end %>
+
 
   <section class="main-header">
     <img src="<%= asset_path "achieve.png" %>">
@@ -67,5 +57,3 @@
     <p>運営会社DIVE INTO CODE株式会社</p>
     <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
   </footer>
-</body>
-</html>
