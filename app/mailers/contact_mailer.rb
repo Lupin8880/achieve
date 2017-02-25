@@ -9,6 +9,7 @@ class ContactMailer < ApplicationMailer
     mail to: "t-da@suou.waseda.jp",subject:'問い合わせがきました'
   end
   
+  
   def send_mail_to_user(email)
     mail to: email,subject:'問い合わせが完了しました'
   end
