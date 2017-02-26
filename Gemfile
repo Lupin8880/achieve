@@ -58,4 +58,9 @@ gem 'pry-rails'
 group :development do
   gem 'letter_opener_web'
   gem 'pry-rails'
+  
+gem 'rails_admin'
+
+gem 'cancan'
+
 end
