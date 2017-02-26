@@ -81,8 +81,8 @@ onfig.action_mailer.default_url_options = { host: 'https://damp-basin-41335.hero
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings =
 {
- user_name: ENV['app59467657@heroku.com'],
- password: ENV['rq7ylwed3705'],
+ user_name: ENV['SEND'],
+ password: ENV['SEND'],
  domain: "heroku.com",
  address: "smtp.sendgrid.net",
  port: 587,
