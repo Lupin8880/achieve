@@ -13,8 +13,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contacts_params)
     if @contact.save
-      ContactMailer.send_mail_to_user(@contact.email).deliver
-      ContactMailer.send_mail_to_manager.deliver
+      ContactMailer.send_mail_to_user(@contact).deliver
+      ContactMailer.send_mail_to_manager(@contact).deliver
       redirect_to root_path, notice: "お問合わせが完了しました！"
       # NoticeMailer.sendmail_contact(@contact).deliver
     else
