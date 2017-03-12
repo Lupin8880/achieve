@@ -59,9 +59,11 @@ gem 'rails_admin'
 
 gem 'cancan'
 
+gem 'activeresource'
+
 group :development do
   gem 'letter_opener_web'
   gem 'pry-rails'
   gem 'better_errors'
-  
+
 end
