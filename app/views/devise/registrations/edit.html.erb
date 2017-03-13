@@ -9,11 +9,13 @@
   <div class="field">
     <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %>
   </div>
-  
+
   <!-- 名前入力用のフィールドを追加 -->
   <div class="field">
     <%= f.text_field :name, class: "form-control", class: "form-control", placeholder: "名前" %>
   </div>
+
+<% if @user.provider.blank? %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -25,6 +27,25 @@
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
+
+    <div class="field">
+      <%= f.label :現在のパスワード %><br />
+      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+    </div>
+
+  <% end %>
+
+    <div class="field">
+      <%= profile_img(@user) if profile_img(@user) %>
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "更新", class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+
   </div>
 
   <div class="field">
