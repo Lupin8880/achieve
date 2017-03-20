@@ -19,7 +19,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = current_user.comments.destroy(comment_params)
+    @blog = Blog.find(comment_params[:id])
+    @comment.blog.destroy
   end
 
   private
