@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
     root 'top#index'
   resources :poems, only: [:index, :show]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -19,6 +20,14 @@ Rails.application.routes.draw do
 
   if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
+end
+
+resources :blogs do
+  resources :comments
+
+  collection do
+    post :confirm
+  end
 end
 
 
