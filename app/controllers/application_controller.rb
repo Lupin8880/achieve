@@ -9,6 +9,18 @@ class ApplicationController < ActionController::Base
   #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
 
+  before_action :current_notifications
+
+def current_notifications
+  @notifications_count = Notification.where(user_id: current_user.id).where(read: false).count
+end
+
+before_action :current_notifications, if: :signed_in?
+
+def current_notifications
+  @notifications_count = Notification.where(user_id: current_user.id).where(read: false).count
+end
+
   protected
 
     #deviseのストロングパラメーターにカラム追加するメソッドを定義
@@ -16,4 +28,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
       devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
     end
+
+
+
+
 end
