@@ -8,7 +8,6 @@
         <td>
           <% if conversation.target_user(current_user).present? %>
             <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%>
-            <%= link_to recipient.name, conversation_messages_path(conversation) %>
           <% end %>
         </td>
       <% end %>
