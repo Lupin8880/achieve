@@ -62,15 +62,7 @@ header {
   padding-bottom: 15%;
   width: 100%;
   background-size: cover;
-  background-image: url("header.jpg");
-  background-attachment: fixed;
-}
-
-.main-header {
-  padding-bottom: 15%;
-  width: 100%;
-  background-size: cover;
-  background-image:  url("header.jpg");
+  background-image: image-url("header.jpg");
   background-attachment: fixed;
 }
 
@@ -129,4 +121,3 @@ body {
   opacity: 0.7;
   }
 }
-
